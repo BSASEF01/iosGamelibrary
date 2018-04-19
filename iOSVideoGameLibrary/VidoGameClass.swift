@@ -7,15 +7,16 @@
 //
 
 import UIKit
+import RealmSwift
 
 class VidoGameClass: UIViewController {
     
     class Task {
         
-        var title: String
-        var dueDate: Date?
-        var genre: String
-        var aveilablity = true
+       @objc dynamic var title: String = ""
+       @objc dynamic  var dueDate: Date = Dete()
+       @objc dynamic var genre: String = ""
+       @objc dynamic var aveilablity = true
         
         enum Genre: String{
             case rpg = "RPG"

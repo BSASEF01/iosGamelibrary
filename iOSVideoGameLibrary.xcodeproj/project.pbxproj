@@ -16,6 +16,7 @@
 		27343A632087BFE3001BEBD9 /* AddGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27343A622087BFE3001BEBD9 /* AddGameViewController.swift */; };
 		27343A652087CC28001BEBD9 /* VidoGameClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27343A642087CC28001BEBD9 /* VidoGameClass.swift */; };
 		27343A6720890BE5001BEBD9 /* GameManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27343A6620890BE5001BEBD9 /* GameManager.swift */; };
+		27343A69208A63E1001BEBD9 /* GametableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27343A68208A63E1001BEBD9 /* GametableViewCell.swift */; };
 		ECDCF9EFB1739E533C18AC17 /* Pods_iOSVideoGameLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18FB02A66E67440B98D60F20 /* Pods_iOSVideoGameLibrary.framework */; };
 /* End PBXBuildFile section */
 
@@ -32,6 +33,7 @@
 		27343A622087BFE3001BEBD9 /* AddGameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddGameViewController.swift; sourceTree = "<group>"; };
 		27343A642087CC28001BEBD9 /* VidoGameClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VidoGameClass.swift; sourceTree = "<group>"; };
 		27343A6620890BE5001BEBD9 /* GameManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameManager.swift; sourceTree = "<group>"; };
+		27343A68208A63E1001BEBD9 /* GametableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GametableViewCell.swift; sourceTree = "<group>"; };
 		27CEFC386CFC9E2E61878211 /* Pods-iOSVideoGameLibrary.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOSVideoGameLibrary.debug.xcconfig"; path = "Pods/Target Support Files/Pods-iOSVideoGameLibrary/Pods-iOSVideoGameLibrary.debug.xcconfig"; sourceTree = "<group>"; };
 		2C570F7743361BBF6255CF9D /* Pods-iOSVideoGameLibrary.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iOSVideoGameLibrary.release.xcconfig"; path = "Pods/Target Support Files/Pods-iOSVideoGameLibrary/Pods-iOSVideoGameLibrary.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -72,8 +74,9 @@
 				072C5683207FE10D00734CE5 /* AppDelegate.swift */,
 				072C5685207FE10D00734CE5 /* ViewController.swift */,
 				27343A622087BFE3001BEBD9 /* AddGameViewController.swift */,
-				27343A642087CC28001BEBD9 /* VidoGameClass.swift */,
 				27343A6620890BE5001BEBD9 /* GameManager.swift */,
+				27343A642087CC28001BEBD9 /* VidoGameClass.swift */,
+				27343A68208A63E1001BEBD9 /* GametableViewCell.swift */,
 				072C5687207FE10D00734CE5 /* Main.storyboard */,
 				072C568D207FE10D00734CE5 /* Assets.xcassets */,
 				072C568F207FE10D00734CE5 /* LaunchScreen.storyboard */,
@@ -231,6 +234,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				27343A69208A63E1001BEBD9 /* GametableViewCell.swift in Sources */,
 				27343A632087BFE3001BEBD9 /* AddGameViewController.swift in Sources */,
 				27343A6720890BE5001BEBD9 /* GameManager.swift in Sources */,
 				072C5686207FE10D00734CE5 /* ViewController.swift in Sources */,

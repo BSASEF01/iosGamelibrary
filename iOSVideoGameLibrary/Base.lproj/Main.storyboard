@@ -23,7 +23,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="72" id="lj7-NW-V03">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="gameCell" rowHeight="72" id="lj7-NW-V03" customClass="GametableViewcell" customModule="iOSVideoGameLibrary" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="72"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="lj7-NW-V03" id="onT-vq-zAR">
@@ -54,6 +54,11 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="avaliableLabel" destination="Th9-cr-DGe" id="s9K-3q-rJ7"/>
+                                            <outlet property="genraLabel" destination="agL-DE-R3O" id="5hH-WZ-wqL"/>
+                                            <outlet property="nameLable" destination="874-Ak-zl6" id="vGt-cV-dGB"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -70,6 +75,9 @@
                         </barButtonItem>
                     </navigationItem>
                     <nil key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="tableView" destination="fLf-P4-WLI" id="e4G-ki-9cy"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -105,7 +113,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="URI-oD-SyN" customClass="A">
-                                <rect key="frame" x="0.0" y="341" width="375" height="162"/>
+                                <rect key="frame" x="0.0" y="339" width="375" height="162"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             </pickerView>
                         </subviews>
@@ -120,13 +128,13 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="gameTitleTextFilf" destination="bsX-c8-rgk" id="u2o-Rz-POQ"/>
-                        <outlet property="pickerView" destination="URI-oD-SyN" id="icg-6f-sV5"/>
+                        <outlet property="gameTitleTextField" destination="bsX-c8-rgk" id="CS1-j3-f1d"/>
                         <outlet property="pikerView" destination="URI-oD-SyN" id="Qhv-A3-CHh"/>
-                        <outlet property="saveButton" destination="rBk-Vi-ll2" id="kE5-e4-lAd"/>
+                        <segue destination="Pc3-60-qSr" kind="unwind" identifier="unWindToLibrary" unwindAction="unwindToLibraryWithSegue:" id="zKR-kZ-EHO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EvI-7j-vc0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="Pc3-60-qSr" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1620" y="133.74384236453201"/>
         </scene>

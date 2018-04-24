@@ -8,13 +8,13 @@
 
 import UIKit
 
-class AddGameViewController: UIViewController {
+class AddGameViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
 
     
     
-    @IBOutlet weak var pikerView: A!
+    @IBOutlet weak var pikerView: UIPickerView!
     
-    @IBOutlet weak var gameTitleTextFilf: UITextField!
+    @IBOutlet weak var gameTitleTextField: UITextField!
     
     let genres = ["RPG", "Shooter","Platformer", "Battle Royale","MMOPRG", "Fighting Game", "survival"]
     
@@ -23,7 +23,7 @@ class AddGameViewController: UIViewController {
         super.viewDidLoad()
        
         pikerView.delegate = self
-        pikerView.detaSource = self
+        pikerView.dataSource = self
         
     }
 
@@ -32,12 +32,11 @@ class AddGameViewController: UIViewController {
         
     }
     
-    func pickerView(_ pickView: UIPickerView, numnerOfRowInComponent component: Int) -> Int {
+    func pickerView(_ pickView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         return genres.count
     }
     
-      func pickerView(_ pickView: UIPickerView,titleForRow row, forComponent component: Int) -> String {
-       
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         return genres[row]
     }
     
@@ -47,6 +46,20 @@ class AddGameViewController: UIViewController {
     
     
     @IBAction func saveButton(_ sender: Any) {
+     
+        if (gameTitleTextField.text?.isEmpty)! {
+            let alert = UIAlertController(title: "Error", message: "please input a game title", preferredStyle: .alert)
+            self.present(alert,animated: true)
+           
+        } else{
+            var newGame = VidoGameClass()
+            newGame.title = gameTitleTextField.text!
+            newGame.genre = genres[pikerView.selectedRow(inComponent: 0)]
+            GameManager.sharedInstance.addGame(newGame)
+           self.performSegue(withIdentifier: "unWindToLibrary", sender: self)
+        }
+    
+    
     }
     
    

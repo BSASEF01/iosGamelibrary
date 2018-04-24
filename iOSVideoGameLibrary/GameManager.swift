@@ -15,7 +15,9 @@ final class GameManager {
     
     static let sharedInstance = GameManager()
     
+    var games: Results<VidoGameClass>!
     private init() {
+        games = realm.objects(VidoGameClass.self)
         
     }
     
@@ -23,20 +25,21 @@ final class GameManager {
     
     let calendar = Calendar.current
     
-    var games: Results<VideoGame>!
     
-    func addGame(_ game: VideoGame) {
+    
+    func addGame(_ game: VidoGameClass) {
         try! realm.write {
             realm.add(game)
         }
     }
     
-    func removeGame(_ game: VideoGame) {
+    func removeGame(_ game: VidoGameClass) {
         try! realm.write {
             realm.delete(game)
+        }
     }
     
-    func getGame(index: Int) -> VideoGame {
+    func getGame(index: Int) -> VidoGameClass {
         return games[index]
     }
     
@@ -44,11 +47,16 @@ final class GameManager {
         return games.count
     }
     
-    
+    func checkInOrOut(game:VidoGameClass) {
+        try! realm.write {
+            if game.aveilablity  {
+                game.aveilablity = false
+                game.dueDate = calendar.date(byAdding: .day, value: 3,to: Date())!
+            } else {
+                game.aveilablity = true
+                game.dueDate = Date()
+            }
+        }
+    }
+
 }
-
-
-
-
-
-
